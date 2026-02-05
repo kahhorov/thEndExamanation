@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import SidebarMenu from "@/components/sidebarMenu";
 import { Gamepad2 } from "lucide-react";
 import React, { ReactNode } from "react";
@@ -18,8 +19,9 @@ function DashboardLayout({ children }: { children: ReactNode }) {
       </div>
 
       <div className="grow">
-        <header className="px-4 py-4 border-gray-100 border-b sticky top-0">
-          header
+        <header className="px-8 py-3 flex justify-between border-gray-100 border-b sticky top-0">
+          <span className="font-black text-lg">Logo</span>
+          <Navbar />
         </header>
 
         <div className="px-4 py-5">{children}</div>
