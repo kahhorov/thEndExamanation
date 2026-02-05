@@ -1,27 +1,6 @@
+import SidebarMenu from "@/components/sidebarMenu";
 import { Gamepad2 } from "lucide-react";
-import Link from "next/link";
 import React, { ReactNode } from "react";
-
-interface NavItems {
-  text: string;
-  href: string;
-  icon?: React.HTMLElementType;
-}
-
-const navItems: NavItems[] = [
-  {
-    text: "Asosiy",
-    href: "/dashboard",
-  },
-  {
-    text: "Rooms",
-    href: "/rooms",
-  },
-  {
-    text: "Bar",
-    href: "/bar",
-  },
-];
 
 function DashboardLayout({ children }: { children: ReactNode }) {
   return (
@@ -34,17 +13,7 @@ function DashboardLayout({ children }: { children: ReactNode }) {
           </span>
         </div>
         <nav className="py-3">
-          <ul className="flex flex-col gap-2">
-            {navItems.map((item) => {
-              return (
-                <li key={item.href} className="px-2 py-1 shadow-sm rounded-md">
-                  <Link href={item.href} className="flex">
-                    {item.text}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <SidebarMenu />
         </nav>
       </div>
 

@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="uz">
-      <body className={`${sourceSans.variable} font-sans antialiased`}>
+      <body className={`${sourceSans.variable} font-sans antialiased h-screen`}>
         {children}
       </body>
     </html>

@@ -5,6 +5,8 @@ function App() {
   if (user) {
     redirect("/dashboard");
   }
+  redirect("/auth/login");
+
   return <div>App</div>;
 }
 
