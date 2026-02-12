@@ -1,10 +1,14 @@
 import { Gamepad2, PanelLeft } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "../ui/button";
-function Navbar() {
+type Props = {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+};
+function Navbar({ setIsOpen, isOpen }: Props) {
   return (
     <nav className="flex gap-4 items-center">
-      <Button variant={"ghost"}>
+      <Button variant={"ghost"} onClick={() => setIsOpen(!isOpen)}>
         <PanelLeft className="font-light text-gray-600" />
       </Button>
       <Avatar>

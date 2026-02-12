@@ -32,28 +32,34 @@ const navItems: NavItems[] = [
     icon: Store,
   },
 ];
-function SidebarMenu() {
+type Props = {
+  isOpen: boolean;
+};
+function SidebarMenu({ isOpen }: Props) {
   const pathName = usePathname();
 
   return (
     <ul className="flex flex-col gap-2">
       {navItems.map((item) => {
         return (
-          <li key={item.href} className="py-1 border-gray-200 border-b">
+          <li
+            key={item.href}
+            className={`${isOpen ? "flex flex-col justify-start" : "flex justify-end px-3"} py-1  ${pathName === item.href ? "bg-linear-to-r from-cyan-500 to-purple-500 rounded-md transition-all duration-75 ease-linear" : "bg-gray-50 rounded-md transition-all duration-300 ease-linear"}`}
+          >
             <Link
               href={item.href}
-              className={`px-2 py-1 flex items-center gap-2 ${pathName === item.href ? "bg-gray-300 rounded-md transition-all duration-75 ease-linear" : "bg-none transition-all duration-300 ease-linear"}`}
+              className={`px-2 py-1 flex items-center gap-2`}
             >
               {
                 <item.icon
                   size={20}
-                  className={` ${pathName === item.href ? "text-blue-400" : "text-gray-500"}`}
+                  className={` ${pathName === item.href ? "text-white" : "text-gray-500"}`}
                 />
               }
               <span
-                className={`font-medium ${pathName === item.href ? "text-blue-400" : "text-gray-600"}`}
+                className={`font-medium ${pathName === item.href ? "text-white" : "text-gray-600"}`}
               >
-                {item.text}
+                {isOpen && item.text}
               </span>
             </Link>
           </li>

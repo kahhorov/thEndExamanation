@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="uz">
       <body className={`${sourceSans.variable} font-sans antialiased h-screen`}>
+        <Toaster position="top-center" richColors />
         {children}
       </body>
     </html>
