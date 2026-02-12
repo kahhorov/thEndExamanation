@@ -21,7 +21,7 @@ function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen">
       <div
-        className={`${isOpen ? "min-w-64 translate-x-0 transition-all duration-300" : "min-w-14 transition-all duration-300"} h-screen sticky top-0 shadow-md`}
+        className={`${isOpen ? "min-w-64 translate-x-0 transition-all duration-300" : "min-w-14 transition-all duration-300"} h-screen sticky top-0 shadow-xl`}
       >
         <div
           className={`${isOpen ? "justify-center" : "justify-end pr-5"} flex gap-2 items-center py-3.5 select-none`}
@@ -42,7 +42,7 @@ function DashboardLayout({ children }: { children: ReactNode }) {
       </div>
 
       <div className="grow">
-        <header className="px-8 py-2 flex justify-between bg-white shadow-sm z-10 sticky top-2">
+        <header className="px-8 py-2 flex justify-between bg-white dark:bg-[#1F2431] border-b z-10 sticky top-2">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
