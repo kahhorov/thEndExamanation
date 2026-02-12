@@ -1,28 +1,36 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardAction,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
 export function RoomCard() {
   return (
-    <Card className="max-w-80 py-0 pb-5 px-4 relative bg-linear-to-r from-[#111623e3] to-[#1a1c29b6]">
-      <div />
-      <img src="/room.png" alt="room img" className="rounded-md" />
-      <CardHeader className="text-white absolute top-5 translate-y-1/2">
-        <CardAction>
-          <h1 className="font-black">1-Xona</h1>
-          <Badge>Featured</Badge>
-        </CardAction>
-      </CardHeader>
-      {/* <CardFooter className="absolute mt-10 bottom-0 left-0 w-full border-t">
-        <Button className="w-full">View Event</Button>
-      </CardFooter> */}
-    </Card>
+    <div className="relative w-full max-w-md mx-auto rounded-xl overflow-hidden shadow-lg">
+      {/* Background Image with heavy blur */}
+      <img
+        src="/room.png"
+        alt="Gaming Room"
+        className="absolute inset-0 w-full h-full object-cover filter blur-3xl scale-110"
+      />
+
+      {/* Overlay for dark effect */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Card content */}
+      <div className="relative p-6 flex flex-col justify-end h-64">
+        <h2 className="text-white text-2xl font-bold">VIP Room</h2>
+        <span className="inline-block mt-2 bg-green-500 text-white text-sm px-3 py-1 rounded-full">
+          Available
+        </span>
+        <p className="text-white mt-4 text-lg">€12 / hour</p>
+
+        <div className="flex mt-4 space-x-2">
+          <button className="bg-gray-800 text-white px-3 py-1 rounded hover:bg-gray-700">
+            Edit
+          </button>
+          <button className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-500">
+            Delete
+          </button>
+          <button className="bg-gray-600 text-white px-3 py-1 rounded hover:bg-gray-500">
+            View
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -25,7 +25,6 @@ import Loading from "../Loading";
 import { useDeleteRoom } from "@/hooks/useDelete";
 import { toast } from "sonner";
 import { EditRoom } from "../editeRoom";
-import { RoomCard } from "../Card";
 
 type Room = {
   name: string;
@@ -60,7 +59,6 @@ export function RoomsTable() {
 
   return (
     <>
-      {/* <RoomCard /> */}
       <EditRoom setModal={setModal} modal={modal} />
       <Table className="w-10/12 mx-auto mt-5">
         <TableCaption>Xonalar ro'yxati</TableCaption>
